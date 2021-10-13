@@ -1,3 +1,5 @@
+import "./TransactionInfo.scss";
+
 import React, { useState } from "react";
 import { createNewTransaction, getAllTransactions } from "../utility/fetchData";
 import { HistoryTransaction } from "./HistoryTransactions";
@@ -15,8 +17,9 @@ export default class TransactionInfo extends React.PureComponent<{}, { result: a
   render() {
     return (
       <>
+        <div className="title">Billing System</div>
         <AddTransactionForm />
-        <HistoryTransaction transactions={this.state.result} columns={[...USER_DETAILS_FIELDS, ...CREDIT_FIELDS]} />
+        {this.state.result && <HistoryTransaction transactions={this.state.result} columns={[...USER_DETAILS_FIELDS, ...CREDIT_FIELDS]} />}
       </>
     );
   }
@@ -31,19 +34,24 @@ function AddTransactionForm() {
   const handleSubmit = async (event: any) => {
     try {
       event.preventDefault();
-      console.log(newTransaction);
       createNewTransaction(newTransaction as any)
     } catch (e) {
-      console.log("error occurd add new transaction.")
+      alert("error to add new transaction")
     }
   };
 
-  return <form onSubmit={handleSubmit}>
+  return <form onSubmit={handleSubmit} className="new-transaction-form">
     <div className={"user-details"}>
-      {USER_DETAILS_FIELDS.map(name => <CreateInputField fieldName={name} setValue={(value: string) => setValue({ ...newTransaction, [name]: value })} />)}
+      <div className="title-input-group">Personal Details:</div>
+      <div className="inputs-wrapper">
+        {USER_DETAILS_FIELDS.map(name => <CreateInputField fieldName={name} setValue={(value: string) => setValue({ ...newTransaction, [name]: value })} />)}
+      </div>
     </div>
-    <div className={"user-details"}>
-      {CREDIT_FIELDS.map(name => <CreateInputField fieldName={name} setValue={(value: string) => setValue({ ...newTransaction, [name]: value })} />)}
+    <div className={"credit-details"}>
+      <div className="title-input-group">Credit Details:</div>
+      <div className="inputs-wrapper">
+        {CREDIT_FIELDS.map(name => <CreateInputField fieldName={name} setValue={(value: string) => setValue({ ...newTransaction, [name]: value })} />)}
+      </div>
     </div>
     <input type="submit" value="Add Transaction" />
   </form>

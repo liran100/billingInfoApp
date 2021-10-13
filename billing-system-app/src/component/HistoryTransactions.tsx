@@ -37,7 +37,7 @@ export class HistoryTransaction extends React.PureComponent<OwnProps, OwnState> 
                         <Table
                             width={width}
                             height={height}
-                            headerHeight={20}
+                            headerHeight={40}
                             rowHeight={30}
                             sort={this._sort}
                             sortBy={this.state.sortBy}

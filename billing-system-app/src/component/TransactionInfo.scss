@@ -1,0 +1,33 @@
+.title {
+    font: italic 40px bold;
+    pointer-events: none;
+}
+
+.new-transaction-form {
+    margin-bottom: 10px;
+    .title-input-group {
+        font: normal 24px;
+        text-decoration: underline solid;
+        text-align: left;
+        pointer-events: none;
+    }
+    .user-details,
+    .credit-details {
+        margin-bottom: 8px;
+        .inputs-wrapper {
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        label {
+            width: 200px;
+            display: flex;
+            justify-content: start;
+            margin-right: 10px;
+            input {
+                margin: 5px;
+                width: 100%;
+            }
+        }
+    }
+}
