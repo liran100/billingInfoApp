@@ -1,0 +1,32 @@
+$space-bottom:10px;
+.new-transaction-form {
+    margin-bottom: $space-bottom;
+    .title-input-group {
+        font: normal 24px;
+        text-decoration: underline solid;
+        text-align: left;
+        pointer-events: none;
+    }
+    .user-details,
+    .credit-details {
+        margin: 5px;
+        border: 1px solid;
+        margin-bottom: $space-bottom;
+        .inputs-wrapper {
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        label {
+            width: 20%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            input {
+                margin: 5px;
+                min-width: 100px;
+            }
+        }
+    }
+}

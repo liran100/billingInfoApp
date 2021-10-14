@@ -33,7 +33,6 @@ app.get("/api/getAllTransactions", cors(), async (req, res) => {
 app.post("/api/newTransaction", cors(), async (req, res) => {
     try {
         const body = req.body;
-        console.log(body);
         await transaction.create(body);
         res.json({ message: "new transaction added" }).status(200);
     }

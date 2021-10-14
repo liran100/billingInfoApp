@@ -33,5 +33,5 @@ const transactionSchema = new Schema<TransactionType>({
     cerdit_card_number: { type:String, required: true }
 });
 
-const connection = mongoose.createConnection('mongodb://localhost:27017/test');
+const connection = mongoose.createConnection('mongodb://localhost:27017/local');
 export const transaction = connection.model('Transaction', transactionSchema);

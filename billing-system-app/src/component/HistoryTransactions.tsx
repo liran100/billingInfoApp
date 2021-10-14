@@ -1,12 +1,13 @@
 import React from "react";
 import { Column, Table, SortDirection, AutoSizer } from "react-virtualized";
-//import "./index.css";
 import "react-virtualized/styles.css";
 import _ from "lodash";
+import { USER_DETAILS_FIELDS, CREDIT_FIELDS } from "../utility/constantFields";
+
+const columns = [...USER_DETAILS_FIELDS, ...CREDIT_FIELDS];
 
 interface OwnProps {
     transactions: billingSystem.TransactionType[];
-    columns: string[];
 }
 
 interface OwnState {
@@ -44,7 +45,7 @@ export class HistoryTransaction extends React.PureComponent<OwnProps, OwnState> 
                             sortDirection={this.state.sortDirection}
                             rowCount={this.state.sortedList.length}
                             rowGetter={({ index }) => this.state.sortedList[index]}>
-                            {this.props.columns.map(column => <Column label={column.toUpperCase()} dataKey={column} width={200} />)}
+                            {columns.map(column => <Column key={column} label={column.toUpperCase()} dataKey={column} width={200} />)}
                         </Table>
                     )}
                 </AutoSizer>
