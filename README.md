@@ -22,3 +22,4 @@ so...we have many things to do...
 * UX.
 * validation input's values,
 * create docker file.
+* solved why keys of table throw warning.
