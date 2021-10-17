@@ -6,11 +6,11 @@
     "scripts": {
         "tsc": "tsc",
         "initDb": "tsc & node dist/initDb",
-        "install-package": "npm i",
-        "build": "npm-run-all install-package  initDb  tsc ",
-        "start:dev": "npm-run-all build start",
-        "dev": "nodemon --watch src -e ts,ejs --exec npm run start:dev",
-        "start": "node ."
+        "install-packages": "npm i",
+        "build": "npm-run-all install-packages  initDb  tsc ",
+        "node": "node .",
+        "start": "npm-run-all build node",
+        "start:dev": "nodemon --watch src -e ts,ejs --exec npm run start"
     },
     "author": "",
     "license": "ISC",

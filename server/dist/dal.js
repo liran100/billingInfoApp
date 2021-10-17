@@ -1,5 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -21,6 +21,6 @@ const transactionSchema = new Schema({
     cerdit_card_type: { type: String, required: true },
     cerdit_card_number: { type: String, required: true }
 });
-const connection = mongoose_1.default.createConnection('mongodb://localhost:27017/test');
+const connection = mongoose_1.default.createConnection('mongodb://localhost:27017/localhost');
 exports.transaction = connection.model('Transaction', transactionSchema);
 //# sourceMappingURL=dal.js.map

@@ -34,7 +34,6 @@ app.get("/api/getAllTransactions", (0, cors_1.default)(), (req, res) => __awaite
 app.post("/api/newTransaction", (0, cors_1.default)(), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const body = req.body;
-        console.log(body);
         yield dal_1.transaction.create(body);
         res.json({ message: "new transaction added" }).status(200);
     }
