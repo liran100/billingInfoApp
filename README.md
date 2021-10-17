@@ -11,6 +11,9 @@ Before run app, you should need to have installed mongo on localhost with port 2
 Also, you need node v14 to run the projects.s
 
 ### Run Project:
+At the first time you need build the projects.
+> npm run build
+
 > npm run start
 
 The project should open with port 3000. if dosent open, open it with your explorer.
